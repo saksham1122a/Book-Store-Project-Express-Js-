@@ -1,0 +1,19 @@
+{
+  "name": "express-book-store",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 const Port = 8000;
+const fs = require('node:fs')
 
 // In memory DB
 const books =[
@@ -17,6 +18,12 @@ app.get('/books', (req, res) => {
 
 // Middlewares (Plugins)
 app.use(express.json()); // To parse JSON body
+
+app.use(function(req, res, next){
+    const log = `\n[${Date.now()}] ${req.method} ${req.path}`;
+    fs.appendFileSync('log.txt', log, 'utf-8');
+    next();
+})
 
 
 // Now the concept when i want to get a particular book by id, I can make the route dynamic by using route parameters

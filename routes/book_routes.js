@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { BOOKS } = require('../db/book');
-
+const { BOOKS } = require('../models/book');
 
 router.get('/', (req, res) => {
     res.json(BOOKS);  // Convert to JSON and send response
